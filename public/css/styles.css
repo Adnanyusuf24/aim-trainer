@@ -1,0 +1,300 @@
+/* menu.html styles */
+body, h1, h2, h3, span, button, input {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Full body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a2e; /* Dark blue background */
+    color: #e5e5e5; /* Light grey text */
+}
+
+/* Styling for the window */
+.window {
+    background: #16213e; /* Slightly lighter blue */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 50%; /* Adjusted width */
+    max-width: 600px; /* Maximum width to ensure it doesn’t get too wide on larger screens */
+    box-sizing: border-box; /* Make sure padding doesn’t affect the total width */
+}
+
+@media (max-width: 768px) {
+    .window {
+        width: 75%; /* Slightly wider on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .window {
+        width: 90%; /* Even wider on mobile screens to utilize space effectively */
+    }
+}
+
+
+/* Image and Game Title */
+.window > div:first-child {
+    margin-bottom: 20px;
+}
+
+.window img {
+    height: 100px; /* Adjust based on your preference */
+}
+
+.window span {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Mode and Sensitivity selectors */
+.modes, .sensitivities, .alignBtn {
+    margin-bottom: 20px;
+}
+
+.mode, .sensitivity, .align {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: #0f3460;
+    color: #e0f4f1;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.active {
+    background-color: #e94560; /* Vibrant accent color */
+}
+
+/* Hover effect for selectable items */
+.mode:hover, .sensitivity:hover, .align:hover {
+    background-color: #17a2b8; /* Teal */
+}
+
+/* Button styling */
+button.startBtn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #e94560; /* Accent color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.startBtn:hover {
+    background-color: #0f3460;
+}
+
+/* game.html styles*/
+
+/* Container for the game area */
+.container {
+    position: relative;
+    width: 100%;
+    height: 800px; /* You can adjust this based on your game's design */
+    background: #0a1931; /* Dark blue to keep it consistent with the menu */
+    border: 5px solid #16213e; /* Border to give it a defined edge */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    cursor: crosshair;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Target styling */
+.target {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: #e94560; /* Same vibrant accent color for visibility */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    transition: background-color 0.3s; /* For a hover effect */
+}
+
+.target:hover {
+    background-color: #0f3460; /* Dark blue on hover for an interactive feel */
+}
+
+/* Start game button */
+#startButton {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #e94560; /* Accent color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Spacing from the top of the container */
+}
+
+#startButton:hover {
+    background-color: #0f3460;
+}
+
+/* Score and Time Left display */
+#score, #timeLeft {
+    font-size: 1.5em;
+    color: #ffffff; /* White for readability */
+}
+
+div {
+    margin-top: 20px; /* Spacing between score/time and other elements */
+}
+/* Game information container */
+.game-info {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10; /* Ensure it's above the game area */
+}
+
+/* Score and Time Left display with more spacing */
+.game-info div {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #ffffff;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+/* Start button at the bottom of the game container */
+#startButton {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* Leaderboard Title */
+.leaderboard-title {
+    color: #e5e5e5; /* Light grey text for contrast */
+    font-size: 2em; /* Larger font size for the title */
+    position: absolute; /* Position it absolutely */
+    top: 35px; /* Top offset */
+    left: 35px; /* Left offset */
+    margin: 0; /* No need for margin */
+}
+
+/* Main content styles to position the leaderboard */
+.main-content {
+    display: flex; /* Use flex to center children */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: calc(100vh - 40px); /* Full height minus the height of the header */
+    margin-top: 40px; /* Space for the leaderboard title */
+}
+
+/* Leaderboard Styles */
+#leaderboard {
+    width: 100%; /* Full width to use all the horizontal space */
+    max-width: 700px; /* Max width for the leaderboard */
+    /* Center the leaderboard, no need for specific top/bottom margins */
+}
+
+table {
+    width: 90%; /* Allows for some space on the sides */
+    max-width: none; /* Override the max-width set before */
+    border-collapse: collapse;
+    background-color: #16213e;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    font-size: 1.1em; /* Slightly larger font for better readability */
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #0f3460;
+    text-align: left;
+}
+
+th {
+    background-color: #0f3460; /* Darker background for the header */
+    font-size: 1em; /* Sized to match game fonts */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #1a1a2e; /* Zebra striping for rows */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #16213e; /* Alternate row color */
+}
+
+tbody tr:nth-child(1) td,
+tbody tr:nth-child(2) td,
+tbody tr:nth-child(3) td {
+    color: #000000; /* Black text for contrast */
+}
+
+tbody tr:nth-child(1) td {
+    background-color: #ffd700; /* Gold color for first place */
+}
+
+tbody tr:nth-child(2) td {
+    background-color: #c0c0c0; /* Silver color for second place */
+}
+
+tbody tr:nth-child(3) td {
+    background-color: #cd7f32; /* Bronze color for third place */
+}
+
+/* Scrollbar style for the leaderboard in case of overflow */
+#leaderboard::-webkit-scrollbar {
+    width: 8px;
+}
+
+#leaderboard::-webkit-scrollbar-thumb {
+    background-color: #0f3460; /* Scrollbar color */
+    border-radius: 10px;
+}
+
+#leaderboard::-webkit-scrollbar-track {
+    background-color: #1a1a2e; /* Scrollbar track color */
+}
+
+/* Adjustments to the mobile view to ensure readability */
+@media (max-width: 600px) {
+    table {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    th, td {
+        padding: 10px; /* Slightly smaller padding on smaller screens */
+    }
+}

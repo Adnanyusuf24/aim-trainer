@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aim Trainer</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+    <div id="start" class="window">
+        <div>
+            <img src="https://i.ibb.co/VNhxdLv/aim.png" alt="Aim">
+            <span>Aim Trainer</span>
+        </div>
+        <form id="startForm" onsubmit="startGame(); return false;">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="Enter Username">
+
+            <div class="modes">
+                <span>Game Mode</span>
+                <span class="active mode" onclick="selectMode(this)">Easy</span>
+                <span class="mode" onclick="selectMode(this)">Hard</span>
+            </div>
+            <div class="sensitivities">
+                <span>Sensitivity</span>
+                <span class="sensitivity" onclick="selectSensitivity(this)">Low</span>
+                <span class="active sensitivity" onclick="selectSensitivity(this)">Medium</span>
+                <span class="sensitivity" onclick="selectSensitivity(this)">High</span>
+            </div>
+            <div class="alignBtn">
+                <img src="https://i.ibb.co/px22v5R/ammo.png" alt="fire button">
+                <span class="active align" onclick="selectAlign(this)">Left</span>
+                <span class="align" onclick="selectAlign(this)">Right</span>
+            </div>
+
+            <button type="submit" class="startBtn">START</button>
+        </form>
+    </div>
+
+    <script src="js/menu.js"></script>
+</body>
+</html>
